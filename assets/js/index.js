@@ -39,7 +39,7 @@ const questions = [
 
 inquirer.prompt(questions).then((answers) => {
   fs.writeFile(
-    "../output/README.txt",
+    "../output/README.md",
     `${licencesInfo[answers.licence]}
 
 # ${answers.title}
