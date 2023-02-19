@@ -123,7 +123,7 @@ ${answers.usage}
 
 ## License
 
-I use ${answers.licence} for this project.
+This program runs under ${answers.licence}.
 
 ## Contributing
 
