@@ -8,7 +8,7 @@ Creates readme based on console input
 
 Screenshot:
 
-  > [![Screenshot]()]
+  > [![Screenshot](../../js)]
 
 ## Table of Contents
 
@@ -26,7 +26,7 @@ No need to install.
 
 ## Usage
 
-use in console, type: node index.js
+To use program open console and  type: > node index.js
 
 ## License
 

@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^6.5.0"
+    "inquirer": "^6.5.0",
+    "inquirer-fs-selector": "^1.5.0",
+    "rxjs": "^7.8.0"
   }
 }

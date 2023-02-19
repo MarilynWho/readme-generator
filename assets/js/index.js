@@ -1,5 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+inquirer.registerPrompt("directory", require("inquirer-fs-selector"));
+const path = require("path");
 
 const licencesInfo = {
   "MIT Licence":
@@ -33,6 +35,11 @@ const questions = [
   { type: "input", message: "What is title of your project?", name: "title" },
   {
     type: "input",
+    message: "Put in short description of the project: ",
+    name: "description",
+  },
+  {
+    type: "input",
     message: "Type in instructions for installation: ",
     name: "installation",
     default: "not required",
@@ -63,11 +70,6 @@ const questions = [
     default: "fork&pull",
   },
   {
-    type: "input",
-    message: "Put in short description of the project: ",
-    name: "description",
-  },
-  {
     type: "list",
     message: "What licence do you use?",
     choices: licences,
@@ -91,7 +93,7 @@ ${answers.description}
 
 Screenshot:
 
-  > [![Screenshot](${answers.screenshot})]
+  > [![Screenshot](${path.relative(answers.screenshot.path, "./")})]
 
 ## Table of Contents
 
