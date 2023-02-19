@@ -12,7 +12,7 @@ const licencesInfo = {
     "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)",
   "BSD 2-Clause License":
     "[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)",
-  "CC0" : "[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)",
+  CC0: "[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)",
   "Attribution-NonCommercial 4.0 International":
     "[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)",
   "Eclipse Public License 1.0":
@@ -37,6 +37,24 @@ const questions = [
     name: "installation",
     default: "not required",
   },
+
+  { type: "input", message: "How to use this programm?", name: "usage" },
+  {
+    type: "directory",
+    name: "screenshot",
+    message: "Choose a Screenshot of working program: ",
+    basePath: "./",
+    options: {
+      displayHidden: true,
+      displayFiles: true,
+      canSelectFile: true,
+      icons: {
+        currentDir: "\u{1F4C2}",
+        // dir: '\u{1F4C1}',
+        // file: '\u{1F4C4}',
+      },
+    },
+  },
   {
     type: "input",
     message: "Type in instructions for contributing: ",
@@ -58,27 +76,31 @@ const questions = [
 
 inquirer.prompt(questions).then(function (answers) {
   let instructions = answers.installation;
-  if (instructions == "not required"){
-  instructions = `No need to install.`;
-} else {
-  instructions = `To install do this:
+  if (instructions == "not required") {
+    instructions = `No need to install.`;
+  } else {
+    instructions = `To install do this:
 ${instructions}`;
   }
-  
+
   if (answers.contributing == "fork&pull") {
-    const contribution = "Do fork and pull to contibute to project."
+    const contribution = "Do fork and pull to contibute to project.";
   } else {
     const contribution = answers.contributing;
   }
-    fs.writeFile(
-      "../output/README.md",
-      `${licencesInfo[answers.licence]}
+  fs.writeFile(
+    "../output/README.md",
+    `${licencesInfo[answers.licence]}
 
 # ${answers.title}
 
 ## Description
 
 ${answers.description}
+
+Screenshot:
+
+  > [![Screenshot](${answers.screenshot})]
 
 ## Table of Contents
 
@@ -96,6 +118,8 @@ ${instructions}
 
 ## Usage
 
+${answers.usage}
+
 ## License
 
 I use ${answers.licence} for this project.
@@ -106,15 +130,17 @@ ${contribution}
 
 ## Tests
 
+
+
 ## Questions
 
 If you have any further questions you can reach out @ [https://github.com/${
-        answers.github
-      }](https://github.com/${answers.github}).
+      answers.github
+    }](https://github.com/${answers.github}).
 Or send an email to: ${answers.email}.
 `,
-      (err) => {
-        err ? console.log("We have a problem") : console.log("Creating a file");
-      }
-    );
+    (err) => {
+      err ? console.log("We have a problem") : console.log("Creating a file");
+    }
+  );
 });
