@@ -1,10 +1,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Readme creator
+# Readme generator
 
 ## Description
 
-Creates readme based on console input
+This program was created to easily generate README.md files for my projects
 
 Screenshot:
 
@@ -26,11 +26,11 @@ No need to install.
 
 ## Usage
 
-To use program open console and  type: > node index.js
+To use this program got to command line and type > node index.js
 
 ## License
 
-I use MIT Licence for this project.
+This program runs under MIT Licence.
 
 ## Contributing
 
@@ -43,4 +43,4 @@ All the tests are done manually at the moment
 ## Questions
 
 If you have any further questions you can reach out @ [https://github.com/MarilynWho](https://github.com/MarilynWho).
-Or send an email to: marilynwho@bla.com.
+Or send an email to: marilynwho@wethewer.com.

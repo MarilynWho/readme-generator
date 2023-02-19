@@ -10,6 +10,10 @@ Screenshot:
 
   > ![Screenshot](./img/screenshot-README-generator.png)
 
+Video demo of the working program: 
+
+  > [![Video demo](https://i9.ytimg.com/vi/xC83BtKrCYg/mq3.jpg)](https://youtu.be/xC83BtKrCYg) 
+
 ## Table of Contents
 
 1. [Description](#Description)
