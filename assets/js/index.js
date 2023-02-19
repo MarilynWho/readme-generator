@@ -75,12 +75,19 @@ const questions = [
     choices: licences,
     name: "licence",
   },
+  {
+    type: "input",
+    message: "Put tests for your program here: ",
+    name: "tests",
+    default: "manual",
+  },
 ];
 
 inquirer.prompt(questions).then(function (answers) {
   let instructions = installInstructions(answers.installation);
   const contribution = howToContribute(answers.contributing);
   const screenPAth = pathGrab(answers.screenshot.path);
+  const testsSection = getTests(answers.tests);
 
   fs.writeFile(
     "../output/README.md",
@@ -124,7 +131,7 @@ ${contribution}
 
 ## Tests
 
-
+${testsSection}
 
 ## Questions
 
@@ -158,4 +165,13 @@ ${instructions}`;
 
 function pathGrab(screenpath) {
   return path.relative("./", screenpath);
+}
+
+function getTests(tests) {
+  if (tests == "manual") {
+    return `All the tests are done manual at the moment`;
+  } else {
+    return `Instructions on tests:
+${tests}`;
+  }
 }
