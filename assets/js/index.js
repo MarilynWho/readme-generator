@@ -28,7 +28,14 @@ const licencesInfo = {
 };
 const licences = Object.keys(licencesInfo);
 const questions = [
-  { type: "input", message: "What is your project title?", name: "title" },
+  { type: "input", message: "What is your GitHub profile?", name: "github" },
+  { type: "input", message: "What is your email?", name: "email" },
+  { type: "input", message: "What is title of your project?", name: "title" },
+  {
+    type: "input",
+    message: "Put in short description of the project: ",
+    name: "description",
+  },
   {
     type: "list",
     message: "What licence do you use?",
@@ -45,7 +52,23 @@ inquirer.prompt(questions).then((answers) => {
 # ${answers.title}
 
 ## Description
+${answers.description}
 
+## Table of Contents
+
+## Installation
+
+## Usage
+
+## License
+
+## Contributing
+
+## Tests
+
+## Questions
+If you have any further questions you can reach out @ [https://github.com/${answers.github}]https://github.com/${answers.github}.
+Or send an email to: ${answers.email}.
 `,
     (err) => {
       err ? console.log("We have a problem") : console.log("Creating a file");
