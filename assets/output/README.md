@@ -18,6 +18,8 @@ Creates readme based on console input
 
 ## Installation
 
+No need to install.
+
 ## Usage
 
 ## License

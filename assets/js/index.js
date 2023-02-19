@@ -31,6 +31,7 @@ const questions = [
   { type: "input", message: "What is your GitHub profile?", name: "github" },
   { type: "input", message: "What is your email?", name: "email" },
   { type: "input", message: "What is title of your project?", name: "title" },
+  { type: "input", message: "Type in instructions for installation?", name: "installation", default: "not required" },
   {
     type: "input",
     message: "Put in short description of the project: ",
@@ -44,7 +45,14 @@ const questions = [
   },
 ];
 
-inquirer.prompt(questions).then((answers) => {
+inquirer.prompt(questions).then(function (answers) {
+  let instructions = answers.installation;
+  if (instructions == "not required"){
+  instructions = `No need to install.`;
+} else {
+  instructions = `To install do this:
+${instructions}`;
+}
   fs.writeFile(
     "../output/README.md",
     `${licencesInfo[answers.licence]}
@@ -66,6 +74,8 @@ ${answers.description}
 7. [Questions](#Questions)
 
 ## Installation
+
+${instructions}
 
 ## Usage
 
