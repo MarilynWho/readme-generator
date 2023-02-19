@@ -31,7 +31,18 @@ const questions = [
   { type: "input", message: "What is your GitHub profile?", name: "github" },
   { type: "input", message: "What is your email?", name: "email" },
   { type: "input", message: "What is title of your project?", name: "title" },
-  { type: "input", message: "Type in instructions for installation?", name: "installation", default: "not required" },
+  {
+    type: "input",
+    message: "Type in instructions for installation: ",
+    name: "installation",
+    default: "not required",
+  },
+  {
+    type: "input",
+    message: "Type in instructions for contributing: ",
+    name: "contributing",
+    default: "fork&pull",
+  },
   {
     type: "input",
     message: "Put in short description of the project: ",
@@ -52,10 +63,16 @@ inquirer.prompt(questions).then(function (answers) {
 } else {
   instructions = `To install do this:
 ${instructions}`;
-}
-  fs.writeFile(
-    "../output/README.md",
-    `${licencesInfo[answers.licence]}
+  }
+  
+  if (answers.contributing == "fork&pull") {
+    const contribution = "Do fork and pull to contibute to project."
+  } else {
+    const contribution = answers.contributing;
+  }
+    fs.writeFile(
+      "../output/README.md",
+      `${licencesInfo[answers.licence]}
 
 # ${answers.title}
 
@@ -85,17 +102,19 @@ I use ${answers.licence} for this project.
 
 ## Contributing
 
+${contribution}
+
 ## Tests
 
 ## Questions
 
 If you have any further questions you can reach out @ [https://github.com/${
-      answers.github
-    }](https://github.com/${answers.github}).
+        answers.github
+      }](https://github.com/${answers.github}).
 Or send an email to: ${answers.email}.
 `,
-    (err) => {
-      err ? console.log("We have a problem") : console.log("Creating a file");
-    }
-  );
+      (err) => {
+        err ? console.log("We have a problem") : console.log("Creating a file");
+      }
+    );
 });
