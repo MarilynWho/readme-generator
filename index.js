@@ -101,7 +101,7 @@ ${answers.description}
 
 Screenshot:
 
-  > [![Screenshot](${screenPAth})]
+  > [Screenshot](${screenPAth})
 
 ## Table of Contents
 
@@ -164,7 +164,7 @@ ${instructions}`;
 }
 
 function pathGrab(screenpath) {
-  return path.relative("./", screenpath);
+  return path.relative("./index.js ", screenpath);
 }
 
 function getTests(tests) {

@@ -8,7 +8,7 @@ Creates readme based on console input
 
 Screenshot:
 
-  > [![Screenshot](img/screenshot-README-generator.png)]
+  > [Screenshot](../img/screenshot-README-generator.png)
 
 ## Table of Contents
 
