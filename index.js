@@ -101,7 +101,7 @@ ${answers.description}
 
 Screenshot:
 
-  > [Screenshot](${screenPAth})
+  > ![Screenshot](${screenPAth})
 
 ## Table of Contents
 
