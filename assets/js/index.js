@@ -80,6 +80,7 @@ const questions = [
 inquirer.prompt(questions).then(function (answers) {
   let instructions = installInstructions(answers.installation);
   const contribution = howToContribute(answers.contributing);
+  const screenPAth = pathGrab(answers.screenshot.path);
 
   fs.writeFile(
     "../output/README.md",
@@ -93,7 +94,7 @@ ${answers.description}
 
 Screenshot:
 
-  > [![Screenshot](${path.relative(answers.screenshot.path, "./")})]
+  > [![Screenshot](${screenPAth})]
 
 ## Table of Contents
 
@@ -153,4 +154,8 @@ function installInstructions(instructions) {
     return `To install do this:
 ${instructions}`;
   }
+}
+
+function pathGrab(screenpath) {
+  return path.relative("./", screenpath);
 }
