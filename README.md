@@ -8,7 +8,7 @@ This progam is created to generate README.md file based on console input.
 
 Screenshot:
 
-  > ![Screenshot](../img/screenshot-README-generator.png)
+  > ![Screenshot](./img/screenshot-README-generator.png)
 
 ## Table of Contents
 
