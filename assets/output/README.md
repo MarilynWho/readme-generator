@@ -3,9 +3,18 @@
 # Readme creator
 
 ## Description
+
 Creates readme based on console input
 
 ## Table of Contents
+
+1. [Description](#Description)
+2. [Installation](#Installation)
+3. [Usage](#Usage)
+4. [License](#License)
+5. [Contributing](#Contributing)
+6. [Tests](#Tests)
+7. [Questions](#Questions)
 
 ## Installation
 
@@ -13,10 +22,13 @@ Creates readme based on console input
 
 ## License
 
+I use MIT Licence for this project.
+
 ## Contributing
 
 ## Tests
 
 ## Questions
-If you have any further questions you can reach out @ [https://github.com/MarilynWho]https://github.com/MarilynWho.
+
+If you have any further questions you can reach out @ [https://github.com/MarilynWho](https://github.com/MarilynWho).
 Or send an email to: marilynwho@bla.com.

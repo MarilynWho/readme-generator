@@ -52,9 +52,18 @@ inquirer.prompt(questions).then((answers) => {
 # ${answers.title}
 
 ## Description
+
 ${answers.description}
 
 ## Table of Contents
+
+1. [Description](#Description)
+2. [Installation](#Installation)
+3. [Usage](#Usage)
+4. [License](#License)
+5. [Contributing](#Contributing)
+6. [Tests](#Tests)
+7. [Questions](#Questions)
 
 ## Installation
 
@@ -62,12 +71,17 @@ ${answers.description}
 
 ## License
 
+I use ${answers.licence} for this project.
+
 ## Contributing
 
 ## Tests
 
 ## Questions
-If you have any further questions you can reach out @ [https://github.com/${answers.github}]https://github.com/${answers.github}.
+
+If you have any further questions you can reach out @ [https://github.com/${
+      answers.github
+    }](https://github.com/${answers.github}).
 Or send an email to: ${answers.email}.
 `,
     (err) => {
