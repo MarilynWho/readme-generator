@@ -12,7 +12,7 @@ Screenshot:
 
 Video demo of the working program: 
 
-  > [![Video demo](https://i9.ytimg.com/vi/xC83BtKrCYg/mq3.jpg)](https://youtu.be/xC83BtKrCYg) 
+  > [![Video demo](./img/video.png)](https://youtu.be/xC83BtKrCYg) 
 
 ## Table of Contents
 
