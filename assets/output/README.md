@@ -6,6 +6,10 @@
 
 Creates readme based on console input
 
+Screenshot:
+
+  > [![Screenshot]()]
+
 ## Table of Contents
 
 1. [Description](#Description)
@@ -22,13 +26,19 @@ No need to install.
 
 ## Usage
 
+use in console, type: node index.js
+
 ## License
 
 I use MIT Licence for this project.
 
 ## Contributing
 
+Do fork and pull to contibute to project.
+
 ## Tests
+
+
 
 ## Questions
 

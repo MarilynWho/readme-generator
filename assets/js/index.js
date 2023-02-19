@@ -53,6 +53,7 @@ const questions = [
         // dir: '\u{1F4C1}',
         // file: '\u{1F4C4}',
       },
+      shouldDisplayItem: (isDir, isFile, path) => true,
     },
   },
   {
@@ -75,19 +76,9 @@ const questions = [
 ];
 
 inquirer.prompt(questions).then(function (answers) {
-  let instructions = answers.installation;
-  if (instructions == "not required") {
-    instructions = `No need to install.`;
-  } else {
-    instructions = `To install do this:
-${instructions}`;
-  }
+  let instructions = installInstructions(answers.installation);
+  const contribution = howToContribute(answers.contributing);
 
-  if (answers.contributing == "fork&pull") {
-    const contribution = "Do fork and pull to contibute to project.";
-  } else {
-    const contribution = answers.contributing;
-  }
   fs.writeFile(
     "../output/README.md",
     `${licencesInfo[answers.licence]}
@@ -144,3 +135,20 @@ Or send an email to: ${answers.email}.
     }
   );
 });
+
+function howToContribute(answer) {
+  if (answer == "fork&pull") {
+    return "Do fork and pull to contibute to project.";
+  } else {
+    return answer;
+  }
+}
+
+function installInstructions(instructions) {
+  if (instructions == "not required") {
+    return `No need to install.`;
+  } else {
+    return `To install do this:
+${instructions}`;
+  }
+}
