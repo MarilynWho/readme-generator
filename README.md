@@ -24,13 +24,15 @@ Screenshot:
 
 When this project is copied you will need to install folowing packages:
 
-```npm init -y
+```
+npm init -y
 
 npm i inquirer@6.5.0
 
 npm install --save inquirer-fs-selector
 
-npm i rxjs```
+npm i rxjs
+```
 
 ## Usage
 
