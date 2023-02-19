@@ -169,7 +169,7 @@ function pathGrab(screenpath) {
 
 function getTests(tests) {
   if (tests == "manual") {
-    return `All the tests are done manual at the moment`;
+    return `All the tests are done manually at the moment`;
   } else {
     return `Instructions on tests:
 ${tests}`;

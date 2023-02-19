@@ -38,7 +38,7 @@ Do fork and pull to contibute to project.
 
 ## Tests
 
-
+All the tests are done manual at the moment
 
 ## Questions
 
